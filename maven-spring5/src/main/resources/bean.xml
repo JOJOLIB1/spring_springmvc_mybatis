@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+        <bean id="hello" class="com.jjj.spring5.HelloSpring"></bean>
+
+        <bean id="demo1" class="com.jjj.spring5.Demo1">
+                <property name="attribute1" value="属性"></property>
+        </bean>
+        <bean id="demo2" class="com.jjj.spring5.Demo2">
+<!--                <constructor-arg name="attribute1" value="属性"></constructor-arg>-->
+                <constructor-arg index="0" value="属性哦"></constructor-arg>
+        </bean>
+        <bean id="demo3" class="com.jjj.spring5.Demo3" p:attribute1="属性"></bean>
+
+        <bean id="demo4" class="com.jjj.spring5.Demo4">
+                <property name="attribute1">
+                        <null/>
+                </property>
+                <property name="attribute2">
+                        <value>
+                                <![CDATA[<<>>]]>
+                        </value>
+                </property>
+        </bean>
+
+        <bean id="demo5" class="com.jjj.spring5.Demo5">
+                <property name="demo4" ref="demo4"></property>
+                <property name="demo4.attribute1" value="级联赋值"></property>
+        </bean>
+
+        <bean id="demo5.1" class="com.jjj.spring5.Demo5">
+                <property name="demo4">
+                        <bean id="bean4.1" class="com.jjj.spring5.Demo4">
+                                <property name="attribute2" value="属性1"></property>
+                                <property name="attribute1" value="属性2"></property>
+                        </bean>
+                </property>
+        </bean>
+        <util:set id="set">
+                <value>非空</value>
+        </util:set>
+        <util:list id="list">
+                <ref bean="demo1"></ref>
+                <ref bean="demo1"></ref>
+                <ref bean="demo1"></ref>
+                <ref bean="demo1"></ref>
+        </util:list>
+        <bean id="demo6" class="com.jjj.spring5.Demo6">
+                <property name="set" ref="set"></property>
+                <property name="list" ref="list">
+                        <!--<array>
+                                <ref bean="demo1"></ref>
+                                <ref bean="demo1"></ref>
+                                <ref bean="demo1"></ref>
+                                <ref bean="demo1"></ref>
+                        </array>-->
+                </property>
+        </bean>
+
+        <bean id="demo7" class="com.jjj.spring5.Demo7"></bean>
+
+</beans>
