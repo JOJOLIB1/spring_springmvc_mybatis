@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean class="com.jjj.spring5.ioc.Demo8" scope="prototype" init-method="init" destroy-method="destroy"></bean> <!-- 多例,在getBean时创建-->
+<!--    <bean class="com.jjj.spring5.ioc.Demo8" scope="singleton"></bean> &lt;!&ndash; 单例,默认情况,解析时创建&ndash;&gt;-->
+    <context:property-placeholder location="jdbcDruid.properties"></context:property-placeholder>
+    <bean id="druid" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url">
+            <value>${pro.url}</value>
+        </property>
+        <property name="username">
+            <value>${pro.username}</value>
+        </property>
+        <property name="password">
+            <value>${pro.password}</value>
+        </property>
+        <property name="driverClassName">
+            <value>${pro.driverClass}</value>
+        </property>
+    </bean>
+    <bean class="com.jjj.spring5.ioc.Demo8" autowire="byName"></bean>
+    <bean class="com.jjj.spring5.ioc.Demo8" autowire="byType"></bean>
+    <context:component-scan base-package="com.jjj.spring5.ioc" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+    </context:component-scan>
+</beans>

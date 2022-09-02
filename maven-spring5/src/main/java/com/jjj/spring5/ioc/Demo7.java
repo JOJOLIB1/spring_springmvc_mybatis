@@ -1,4 +1,4 @@
-package com.jjj.spring5;
+package com.jjj.spring5.ioc;
 
 import org.springframework.beans.factory.FactoryBean;
 

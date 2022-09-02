@@ -1,6 +1,7 @@
 package com.jjj.spring4;
 
-import com.jjj.spring5.*;
+import com.alibaba.druid.pool.DruidDataSource;
+import com.jjj.spring5.ioc.*;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -51,6 +52,13 @@ public class DemoTest {
     public void testDemo7() {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean.xml");
         System.out.println(applicationContext.getBean("demo7", String.class));
+    }
+
+    @Test
+    public void connection() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beanIod.xml");
+        DruidDataSource druid = applicationContext.getBean("druid", DruidDataSource.class);
+        System.out.println(druid);
     }
 
 

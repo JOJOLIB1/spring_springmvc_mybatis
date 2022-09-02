@@ -1,4 +1,4 @@
-package com.jjj.spring5;
+package com.jjj.spring5.ioc;
 
 /**
  * @className: com.jjj.spring5.Demo5
