@@ -1,7 +1,7 @@
-package com.jjj.spring4;
+package com.jjj.spring5;
 
-import com.jjj.spring5.HelloSpring;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

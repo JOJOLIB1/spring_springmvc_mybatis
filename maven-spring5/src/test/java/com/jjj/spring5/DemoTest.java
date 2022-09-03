@@ -1,8 +1,8 @@
-package com.jjj.spring4;
+package com.jjj.spring5;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.jjj.spring5.ioc.*;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

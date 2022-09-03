@@ -1,9 +1,6 @@
-package com.jjj.spring4.aop;
+package com.jjj.spring5.aop;
 
-import com.jjj.spring5.aop.Config;
-import com.jjj.spring5.aop.Strength;
-import com.jjj.spring5.aop.ToStrength;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

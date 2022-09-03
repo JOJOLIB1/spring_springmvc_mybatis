@@ -20,6 +20,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring-versions}</version>
+                <scope>test</scope>
+            </dependency>
             <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
             <dependency>
                 <groupId>org.springframework</groupId>
