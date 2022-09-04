@@ -16,6 +16,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <spring-versions>5.3.18</spring-versions>
+        <log4j-versions>2.17.1</log4j-versions>
     </properties>
 
     <dependencyManagement>
@@ -93,6 +94,19 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>8.0.28</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j-versions}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j-versions}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
