@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>welcme</title>
 </head>
 <body>
 <h1>欢迎页面</h1>
+<a th:href="@{/testInternalResourceView}">测试转发视图</a><br>
+<a th:href="@{/testApplication}">往应用域塞东西</a><br>
+<a th:href="@{/testSession}">往会话域里塞东西</a><br>
+<a th:href="@{/testMV}">往请求域中塞东西,方法是:ModelAndView</a><br>
+<a th:href="@{/testModel}">往请求域中塞东西,方法是:Model</a><br>
+<a th:href="@{/testModelMap}">往请求域中塞东西,方法是:ModelMap</a><br>
+<a th:href="@{/testMap}">往请求域中塞东西,方法是:Map</a><br>
+<a th:href="@{/testParam1(id=123,username=123)}">一一对应</a><br>
+<a th:href="@{/testParam2(id=123,user_name=123)}">通过映射</a><br>
+<a th:href="@{/testParamAttr(id=123)}">默认值</a><br>
+<a th:href="@{/testReqHeader}">请求头信息</a><br>
+<a th:href="@{/testCookieValue}">cookie信息</a><br>
+<a th:href="@{/testPojo(id=123,username=123)}">通过实体类对象</a><br>
+
 
 </body>
 </html>

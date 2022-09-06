@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @create: 2022-09-05 22:17
  */
 @Controller
-public class HelloController {
+public class DoorController {
     @RequestMapping("/")
     public String hello() {
         return "index";
