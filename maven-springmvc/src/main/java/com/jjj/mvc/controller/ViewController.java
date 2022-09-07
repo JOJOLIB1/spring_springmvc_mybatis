@@ -20,4 +20,8 @@ public class ViewController {
     public String textInternalResourceView() {
         return "forward:/testThymeleafView";
     }
+    @RequestMapping("/redirectView")
+    public String redirectView() {
+        return "redirect:/testThymeleafView";
+    }
 }

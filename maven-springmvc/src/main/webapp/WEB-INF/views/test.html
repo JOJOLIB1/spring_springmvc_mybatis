@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+<form th:action="@{/testput}" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input type="submit" value="发送put请求">
+</form>
+<form th:action="@{/testDel}" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="发送del请求">
+</form>
+</body>
+</html>
