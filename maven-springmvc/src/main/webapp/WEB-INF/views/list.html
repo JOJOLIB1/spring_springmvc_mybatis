@@ -5,23 +5,30 @@
     <title>list</title>
 </head>
 <body>
-<table border="1px" >
+<table id="table" border="1" cellpadding="0" cellspacing="0" style="text-align:
+center;">
   <tr>
       <th>编号</th>
-      <th colspan="5">信息</th>
-      <th>选项</th>
+      <th colspan="4">信息</th>
+      <th>选项:<a th:href="@{/employee_add}">添加</a></th>
   </tr>
     <tr th:each="emp : ${empList}">
-        <td th:text="emp.id"></td>
-        <td th:text="emp.id"></td>
-        <td th:text="emp.lastName"></td>
-        <td th:text="emp.email"></td>
-        <td th:text="emp.gender"></td>
+        <td th:text="${emp.id}"></td>
+        <td th:text="${emp.id}"></td>
+        <td th:text="${emp.lastName}"></td>
+        <td th:text="${emp.email}"></td>
+        <td th:text="${emp.gender}"></td>
         <td>
-            <a href="">删除</a>
-            <a href="">修改</a>
+            <a @click="sendDel" th:href="@{'/employee/'+${emp.id}} ">删除</a>
+            <a th:href="@{'/employee_update/'+${emp.id}}">修改</a>
         </td>
     </tr>
 </table>
+<form method="post" id="del">
+    <input type="hidden" name="_method" value="delete">
+</form>
+<script type="text/javascript" th:src="@{/static/js/jquery-3.6.0.min.js}"></script>
+<script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
+<script type="text/javascript" th:src="@{/static/js/submit.js}"></script>
 </body>
 </html>

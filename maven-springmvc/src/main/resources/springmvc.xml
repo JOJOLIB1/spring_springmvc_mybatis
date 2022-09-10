@@ -24,8 +24,14 @@
             </bean>
         </property>
     </bean>
+    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="suffix" value=".jsp"/>
+        <property name="prefix" value="/WEB-INF/views/"/>
+    </bean>-->
     <mvc:view-controller path="/" view-name="index"/>
     <mvc:view-controller path="/test" view-name="test"/>
     <mvc:view-controller path="/rest" view-name="rest"/>
     <mvc:annotation-driven/>
+    <mvc:default-servlet-handler/>
+    <mvc:view-controller path="/employee_add" view-name="employee_add"/>
 </beans>

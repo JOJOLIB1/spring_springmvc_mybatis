@@ -4,8 +4,7 @@ import com.jjj.mvc.dao.EmployeeDAO;
 import com.jjj.mvc.pojo.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Collection;
@@ -27,5 +26,30 @@ public class EmployeeController {
         mv.setViewName("list");
         mv.addObject("empList", list);
         return mv;
+    }
+    @DeleteMapping("/employee/{id}")
+    public String deleteeEmp(@PathVariable("id") Integer id) {
+        dao.delete(id);
+        return "redirect:/employee";
+    }
+
+    @PostMapping("/employee")
+    public String addEmp(Employee employee) {
+        dao.save(employee);
+        return "redirect:/employee";
+    }
+
+    @GetMapping("/employee_update/{id}")
+    public ModelAndView getMessage(@PathVariable("id") Integer id) {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("employee_update");
+        mv.addObject("message", dao.get(id));
+        return mv;
+    }
+
+    @PutMapping("/employee")
+    public String updateEmp(Employee employee) {
+        dao.save(employee);
+        return "redirect:/employee";
     }
 }

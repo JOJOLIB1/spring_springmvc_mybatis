@@ -3,8 +3,10 @@ package com.jjj.spring5.ioc;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.jjj.spring5.ioc.*;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 /**
  * @className: com.jjj.spring4.DemoTest
@@ -12,6 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author: 江骏杰
  * @create: 2022-08-30 22:38
  */
+
 public class DemoTest {
     @Test
     public void testDemo1() {

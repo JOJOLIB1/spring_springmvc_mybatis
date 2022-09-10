@@ -18,4 +18,5 @@
     </bean>
     <context:component-scan base-package="com.jjj.spring5"/>
     <tx:annotation-driven/>
+    <bean class="java.lang.String"/>
 </beans>
