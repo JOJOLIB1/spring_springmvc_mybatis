@@ -28,10 +28,29 @@
         <property name="suffix" value=".jsp"/>
         <property name="prefix" value="/WEB-INF/views/"/>
     </bean>-->
+    <mvc:interceptors>
+        <bean class="com.jjj.mvc.interceptor.MyInterceptor"/>
+        <!--<ref bean="myInterceptor"/>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/*"/>
+            <ref bean="myInterceptor"/>
+        </mvc:interceptor>-->
+    </mvc:interceptors>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
     <mvc:view-controller path="/" view-name="index"/>
     <mvc:view-controller path="/test" view-name="test"/>
     <mvc:view-controller path="/rest" view-name="rest"/>
+    <mvc:view-controller path="/ajax" view-name="ajax"/>
     <mvc:annotation-driven/>
     <mvc:default-servlet-handler/>
     <mvc:view-controller path="/employee_add" view-name="employee_add"/>
+    <!--<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="java.lang.Exception">success</prop>
+            </props>
+        </property>
+        <property name="exceptionAttribute" value="ex"/>
+    </bean>-->
 </beans>

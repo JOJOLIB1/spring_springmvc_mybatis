@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body>
+    <script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/axios.min.js}"></script>
+    <div id="mydiv">
+        <a @click="sendAjax" th:href="@{/testAjax}">发送ajax请求</a>
+    </div>
+    <script type="text/javascript" th:src="@{/static/js/ajax.js}"></script>
+</body>
+</html>

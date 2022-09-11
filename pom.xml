@@ -11,6 +11,7 @@
     <modules>
         <module>maven-spring5</module>
         <module>maven-springmvc</module>
+        <module>mvc_anno</module>
     </modules>
 
     <properties>
