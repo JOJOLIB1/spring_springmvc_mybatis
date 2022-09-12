@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jjj.mybatis.mappers.UserMapper">
+
+    <!--int insertUser(User user);-->
+    <insert id="insertUser">
+        insert into t_user values (#{id}, #{name}, #{gender}, #{department})
+    </insert>
+
+    <!--int deleteUser(Integer id);-->
+    <delete id="deleteUser">
+        delete from t_user where id = #{id}
+    </delete>
+
+    <!--int updateUser(User user);-->
+    <update id="updateUser">
+        update t_user set name = #{name}, department = #{department}, gender = #{gender} where id = #{id}
+    </update>
+
+</mapper>
